@@ -1,36 +1,33 @@
-import React from 'react';
-import { withLayoutContext } from 'expo-router';
-import {
-  createNativeBottomTabNavigator,
-  NativeBottomTabNavigationOptions,
-  NativeBottomTabNavigationEventMap,
-} from '@bottom-tabs/react-navigation';
-import { ParamListBase, TabNavigationState } from '@react-navigation/native';
-
-const BottomTabNavigator = createNativeBottomTabNavigator().Navigator;
-
-const Tabs = withLayoutContext<
-  NativeBottomTabNavigationOptions,
-  typeof BottomTabNavigator,
-  TabNavigationState<ParamListBase>,
-  NativeBottomTabNavigationEventMap
->(BottomTabNavigator);
+import { Tabs } from '@/components/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: '#007AFF',
+        tabBarInactiveTintColor: '#8E8E93',
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: () => ({ sfSymbol: 'house.fill' }),
+          tabBarIcon: () => ({ sfSymbol: 'house' }),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
-          tabBarIcon: () => ({ sfSymbol: 'paperplane.fill' }),
+          title: 'Study',
+          tabBarIcon: () => ({ sfSymbol: 'book' }),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: () => ({ sfSymbol: 'person' }),
         }}
       />
     </Tabs>

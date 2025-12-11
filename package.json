@@ -2,7 +2,7 @@
   "name": "nativetabs",
   "main": "expo-router/entry",
   "version": "1.0.0",
-  "homepage": "https://github.com/mushyalienstar/Studium".
+  "homepage": "https://github.com/mushyalienstar/Studium",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
